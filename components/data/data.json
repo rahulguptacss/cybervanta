@@ -159,16 +159,6 @@
                   "component": "Contact"
                 }
               ]
-            },
-            "not_found": {
-              "code": "404",
-              "badge": "ACCESS RESTRICTED",
-              "title": "System Node Not Found",
-              "description": "The requested secure node could not be resolved in the CYBERVANTA routing matrix. The perimeter remains active.",
-              "back_home": {
-                "text": "Return to Command Center",
-                "href": "#home"
-              }
             }
           },
           "sections": {

@@ -464,7 +464,7 @@ export interface GetAQuoteSectionData {
 
 export interface SitePages {
   home: PageMeta;
-  not_found: NotFoundData;
+  not_found?: NotFoundData;
   about?: PageMeta;
   services?: PageMeta;
   portfolio?: PageMeta;
