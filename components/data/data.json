@@ -1,0 +1,812 @@
+{
+  "common": {
+    "Header": {
+      "logo": "/logo/logo.webp",
+      "logo_text": "CYBERVANTA",
+      "logo_subtext": "CYBERSECURITY & TECHNOLOGIES",
+      "links": [
+        {
+          "name": "Home",
+          "href": "#home"
+        },
+        {
+          "name": "About Us",
+          "href": "#about"
+        },
+        {
+          "name": "Services",
+          "href": "#services"
+        },
+        {
+          "name": "Why Choose Us",
+          "href": "#why-choose-us"
+        },
+        {
+          "name": "SOC 24/7",
+          "href": "#soc"
+        },
+        {
+          "name": "Process",
+          "href": "#process"
+        },
+        {
+          "name": "Case Studies",
+          "href": "#portfolio"
+        }
+      ],
+      "button_text": "Contact",
+      "button_link": "#contact",
+      "menu_aria_label": "Open Navigation Menu",
+      "close_aria_label": "Close Navigation Menu"
+    },
+    "Footer": {
+      "cta_title_regular": "Ready to Fortify Your",
+      "cta_title_highlight": "Digital Perimeter?",
+      "cta_description": "Partner with CYBERVANTA for autonomous zero-trust cyber defense, 24/7 military-grade SOC monitoring, and battle-tested enterprise resilience.",
+      "email": "security@cybervanta.com",
+      "phone": "+1 (800) 555-CYBER",
+      "address": "742 Evergreen Defense Way, Suite 400, New York, NY 10001",
+      "follow_us_text": "Follow CyberVanta",
+      "socials": [
+        {
+          "name": "Facebook",
+          "href": "https://facebook.com/cybervanta",
+          "icon": "facebook"
+        },
+        {
+          "name": "Instagram",
+          "href": "https://instagram.com/cybervanta",
+          "icon": "instagram"
+        },
+        {
+          "name": "YouTube",
+          "href": "https://youtube.com/@cybervanta",
+          "icon": "youtube"
+        },
+        {
+          "name": "Twitter",
+          "href": "https://twitter.com/cybervanta",
+          "icon": "twitter"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "https://linkedin.com/company/cybervanta",
+          "icon": "linkedin"
+        }
+      ],
+      "button_text": "Contact",
+      "button_link": "#contact",
+      "logo": "/logo/logo.webp",
+      "logo_text": "CYBERVANTA",
+      "logo_subtext": "CYBERSECURITY & TECHNOLOGIES",
+      "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow",
+      "links": [
+        {
+          "name": "Home",
+          "href": "#home"
+        },
+        {
+          "name": "About Us",
+          "href": "#about"
+        },
+        {
+          "name": "Services",
+          "href": "#services"
+        },
+        {
+          "name": "Why Choose Us",
+          "href": "#why-choose-us"
+        },
+        {
+          "name": "SOC 24/7",
+          "href": "#soc"
+        },
+        {
+          "name": "Process",
+          "href": "#process"
+        },
+        {
+          "name": "Case Studies",
+          "href": "#portfolio"
+        }
+      ]
+    },
+    "BackToTop": {
+      "aria_label": "Scroll back to top"
+    }
+  },
+  "categories": {
+    "CyberSecurity": {
+      "templateComponents": {
+        "template-1": {
+          "pages": {
+            "home": {
+              "metadata": {
+                "title": "CYBERVANTA – CYBERSECURITY & TECHNOLOGIES | Autonomous Enterprise Defense",
+                "description": "CYBERVANTA delivers elite enterprise cybersecurity, autonomous AI threat hunting, 24/7 Tier-4 SOC defense, and Zero-Trust architecture."
+              },
+              "components": [
+                {
+                  "key": "hero-section",
+                  "component": "Hero"
+                },
+                {
+                  "key": "about-section",
+                  "component": "About"
+                },
+                {
+                  "key": "services-section",
+                  "component": "Services"
+                },
+                {
+                  "key": "why-choose-us-section",
+                  "component": "WhyChooseUs"
+                },
+                {
+                  "key": "soc-banner-section",
+                  "component": "SocBanner"
+                },
+                {
+                  "key": "process-section",
+                  "component": "Process"
+                },
+                {
+                  "key": "portfolio-section",
+                  "component": "Portfolio"
+                },
+                {
+                  "key": "contact-section",
+                  "component": "Contact"
+                }
+              ]
+            },
+            "not_found": {
+              "code": "404",
+              "badge": "ACCESS RESTRICTED",
+              "title": "System Node Not Found",
+              "description": "The requested secure node could not be resolved in the CYBERVANTA routing matrix. The perimeter remains active.",
+              "back_home": {
+                "text": "Return to Command Center",
+                "href": "#home"
+              }
+            }
+          },
+          "sections": {
+            "breadcrumb": {
+              "home_text": "Home",
+              "home_link": "#home"
+            },
+            "hero": {
+              "eyebrow": "PROTECT • DETECT • PREVENT",
+              "title_line1": "SECURING",
+              "title_line2": "YOUR",
+              "title_highlight": "DIGITAL",
+              "title_line3": "TOMORROW",
+              "description": "CyberVanta delivers advanced digital security solutions to protect your business, data, and people from evolving threats.",
+              "cta_text": "Get Started",
+              "cta_link": "#contact",
+              "video_cta_text": "Watch Our Video",
+              "video_cta_link": "#contact-form",
+              "features": [
+                {
+                  "id": "feat-1",
+                  "icon": "shield",
+                  "title": "Network Security"
+                },
+                {
+                  "id": "feat-2",
+                  "icon": "camera",
+                  "title": "Surveillance Solutions"
+                },
+                {
+                  "id": "feat-3",
+                  "icon": "database",
+                  "title": "Data Protection"
+                },
+                {
+                  "id": "feat-4",
+                  "icon": "cloud",
+                  "title": "Cloud Security"
+                }
+              ],
+              "stats": [
+                {
+                  "value": "500+",
+                  "label": "Businesses Secured"
+                },
+                {
+                  "value": "99.9%",
+                  "label": "Threat Detection"
+                },
+                {
+                  "value": "24/7",
+                  "label": "Expert Support"
+                },
+                {
+                  "value": "10+",
+                  "label": "Years of Experience"
+                }
+              ],
+              "floating_badges": [
+                {
+                  "id": "badge-1",
+                  "icon": "building",
+                  "title": "CCTV & Surveillance"
+                },
+                {
+                  "id": "badge-2",
+                  "icon": "cloud",
+                  "title": "Data Security"
+                },
+                {
+                  "id": "badge-3",
+                  "icon": "shield",
+                  "title": "Cyber Security"
+                },
+                {
+                  "id": "badge-4",
+                  "icon": "cpu",
+                  "title": "IT Solutions"
+                }
+              ],
+              "video": "/video/video-banner.mp4",
+              "image": "/images/hero-shield-3d.png",
+              "image_alt": "CyberVanta Digital Security Shield Core"
+            },
+            "about": {
+              "eyebrow": "ARCHITECTS OF DIGITAL SOVEREIGNTY",
+              "title_regular": "Pioneering Autonomous",
+              "title_highlight": "Zero-Trust Defense",
+              "description": "At CYBERVANTA, we transform passive cybersecurity posture into active threat deterrence. Our autonomous AI neural shields and dedicated threat analysts eliminate breach vectors before adversaries can strike.",
+              "image": "/images/about-cybervanta.webp",
+              "image_alt": "CYBERVANTA AI Neural Shield Core",
+              "badge": {
+                "icon": "shield-check",
+                "title": "99.99% SECURE",
+                "subtitle": "Active Zero-Trust Telemetry"
+              },
+              "experience_years": "15+",
+              "experience_text": "Years of Sovereign Infrastructure Defense",
+              "points": [
+                "Zero-Day Threat Interception under 1.2 seconds",
+                "Quantum-Safe Hybrid Cryptographic Protocols",
+                "24/7 Dedicated Sovereign Security Operations Center",
+                "Continuous Compliance with ISO 27001, SOC 2, & NIST"
+              ],
+              "button_text": "Discover Our Methodology",
+              "button_link": "#process"
+            },
+            "soc_banner": {
+              "eyebrow": "24/7/365 REAL-TIME CYBER COMMAND",
+              "title": "Global Security Operations Center",
+              "description": "Our Tier-4 SOC monitors over 14 billion digital telemetry events daily, delivering automated containment and rapid human counter-response to sophisticated cyber threats.",
+              "image": "/images/soc-cybervanta.webp",
+              "image_alt": "CYBERVANTA 24/7 Global Security Operations Center",
+              "stat_1_number": "99.99%",
+              "stat_1_label": "Threat Mitigation SLA",
+              "stat_2_number": "< 60s",
+              "stat_2_label": "Mean Incident Response Time",
+              "stat_3_number": "14B+",
+              "stat_3_label": "Daily Telemetry Events Analyzed",
+              "cta_text": "Tour the SOC Architecture",
+              "cta_link": "#contact"
+            },
+            "services": {
+              "eyebrow": "ENTERPRISE CAPABILITIES",
+              "title_regular": "Precision Cybersecurity",
+              "title_highlight": "Solutions",
+              "description": "Comprehensive end-to-end protection engineered for modern cloud-native enterprises and mission-critical networks.",
+              "items": [
+                {
+                  "id": "service-1",
+                  "title_regular": "Managed SOC &",
+                  "title_highlight": "SIEM Defense",
+                  "description": "24/7 autonomous telemetry monitoring and behavioral analysis.\nInstantaneous containment of sophisticated intrusion vectors.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                },
+                {
+                  "id": "service-2",
+                  "title_regular": "Zero-Trust &",
+                  "title_highlight": "Identity Access",
+                  "description": "Continuous micro-segmentation across hybrid environments.\nStrict least-privilege verification and biometric enforcement.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                },
+                {
+                  "id": "service-3",
+                  "title_regular": "Cloud Security &",
+                  "title_highlight": "DevSecOps",
+                  "description": "Continuous multi-cloud posture management (CSPM) audits.\nImmutable container vulnerability scanning inside CI/CD pipelines.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                },
+                {
+                  "id": "service-4",
+                  "title_regular": "Incident Response &",
+                  "title_highlight": "Digital Forensics",
+                  "description": "Rapid triage and full root-cause threat vector isolation.\nBattle-tested automated containment preventing ransomware spread.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                },
+                {
+                  "id": "service-5",
+                  "title_regular": "Offensive Security &",
+                  "title_highlight": "Red Teaming",
+                  "description": "Rigorous adversarial simulations and penetration assessments.\nDefensive posture hardening aligned with MITRE ATT&CK framework.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                },
+                {
+                  "id": "service-6",
+                  "title_regular": "Post-Quantum",
+                  "title_highlight": "Data Encryption",
+                  "description": "Hardware-backed quantum-safe key distribution architectures.\nComplete sovereign compliance across GDPR, HIPAA, and SOC 2.",
+                  "link_text": "Learn More",
+                  "link_href": "#contact"
+                }
+              ]
+            },
+            "why_choose_us": {
+              "eyebrow": "WHY CHOOSE CYBERVANTA",
+              "title_regular": "Your Trusted Cyber Security",
+              "title_highlight": "Partner for Modern Businesses",
+              "description": "We deliver enterprise-grade cyber security solutions backed by advanced technology, expert teams, and round-the-clock monitoring.",
+              "image": "/images/why-choose-cybervanta.webp",
+              "image_alt": "CyberVanta Cybersecurity Analyst in SOC Command Center",
+              "features": [
+                {
+                  "id": "feat-1",
+                  "icon": "handshake",
+                  "title": "Certified Security Experts",
+                  "description": "Our team consists of industry-certified professionals with deep expertise in cyber defense and risk management."
+                },
+                {
+                  "id": "feat-2",
+                  "icon": "cpu",
+                  "title": "AI-Driven Threat Detection",
+                  "description": "Advanced telemetry and autonomous behavioral analysis detecting and neutralizing anomalies in real time."
+                }
+              ]
+            },
+            "process": {
+              "eyebrow": "HOW IT WORKS",
+              "title_regular": "How CYBERVANTA Secures",
+              "title_highlight": "Your Infrastructure",
+              "description": "A battle-tested 4-phase methodology ensuring proactive vulnerability mitigation and impenetrable defense posture.",
+              "image": "/images/process-cybervanta.webp",
+              "steps": [
+                {
+                  "id": "step-1",
+                  "number": "01",
+                  "title": "Threat Surface Audit",
+                  "description": "Comprehensive vulnerability scans, external attack surface discovery, and architecture compliance profiling."
+                },
+                {
+                  "id": "step-2",
+                  "number": "02",
+                  "title": "Zero-Trust Engineering",
+                  "description": "Custom security blueprint design, identity micro-segmentation, and zero-trust policy orchestration."
+                },
+                {
+                  "id": "step-3",
+                  "number": "03",
+                  "title": "Autonomous Deployment",
+                  "description": "Seamless deployment of neural detection sensors, automated SOAR playbooks, and SIEM ingestion."
+                },
+                {
+                  "id": "step-4",
+                  "number": "04",
+                  "title": "24/7 SOC Command",
+                  "description": "Round-the-clock threat hunting, automated incident containment, and continuous security hardening."
+                }
+              ]
+            },
+            "portfolio": {
+              "eyebrow": "PROVEN TRACK RECORD",
+              "title_regular": "Mission-Critical",
+              "title_highlight": "Case Studies",
+              "description": "Real-world defense outcomes achieved for Fortune 500 enterprises, financial institutions, and critical infrastructure.",
+              "items": [
+                {
+                  "id": "case-1",
+                  "title": "Global FinTech Cloud Defense",
+                  "category": "Cloud Security",
+                  "image": "/images/portfolio/portfolio-1.webp",
+                  "image_alt": "Enterprise Cloud Security case study",
+                  "description": "Engineered multi-region zero-trust enclave protecting $40B+ annual digital transactions from automated credential stuffing.",
+                  "link_href": "#contact",
+                  "link_text": "View Case Details"
+                },
+                {
+                  "id": "case-2",
+                  "title": "Healthcare Sovereign Data Fortress",
+                  "category": "Zero Trust",
+                  "image": "/images/portfolio/portfolio-2.webp",
+                  "image_alt": "Healthcare Data Fortress case study",
+                  "description": "Deployed end-to-end homomorphic encryption across 180 hospitals safeguarding 12M+ patient electronic health records.",
+                  "link_href": "#contact",
+                  "link_text": "View Case Details"
+                },
+                {
+                  "id": "case-3",
+                  "title": "Autonomous AI Threat Neutralization",
+                  "category": "AI Defense",
+                  "image": "/images/portfolio/portfolio-3.webp",
+                  "image_alt": "Autonomous AI Threat Neutralization case study",
+                  "description": "Intercepted sophisticated state-sponsored supply chain cyber attack within 42 seconds using behavioral AI telemetry.",
+                  "link_href": "#contact",
+                  "link_text": "View Case Details"
+                },
+                {
+                  "id": "case-4",
+                  "title": "Banking Core Cryptographic Vault",
+                  "category": "FinTech Security",
+                  "image": "/images/portfolio/portfolio-4.webp",
+                  "image_alt": "Banking Cryptographic Vault case study",
+                  "description": "Migrated core interbank clearing network to quantum-resistant encryption with zero downtime and 100% regulatory compliance.",
+                  "link_href": "#contact",
+                  "link_text": "View Case Details"
+                }
+              ]
+            },
+            "faq": {
+              "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+              "title_regular": "Clear Answers to Your",
+              "title_highlight": "Security Questions",
+              "items": [
+                {
+                  "id": "faq-1",
+                  "number": "01",
+                  "question": "How quickly can CYBERVANTA deploy SOC monitoring for our organization?",
+                  "answer": "Our standard rapid-onboarding protocol integrates with your existing cloud and on-premise infrastructure within 72 hours without disrupting daily business operations."
+                },
+                {
+                  "id": "faq-2",
+                  "number": "02",
+                  "question": "What is CYBERVANTA's Zero-Trust deployment model?",
+                  "answer": "We implement 'Never Trust, Always Verify' principles via identity-aware microsegmentation, continuous multi-factor authentication, and dynamic device telemetry validation."
+                },
+                {
+                  "id": "faq-3",
+                  "number": "03",
+                  "question": "How does CYBERVANTA protect against zero-day and ransomware attacks?",
+                  "answer": "Our autonomous AI models analyze low-level process behaviors and network anomalies in real-time, executing automated memory isolation and encryption killing before ransomware can execute."
+                },
+                {
+                  "id": "faq-4",
+                  "number": "04",
+                  "question": "What compliance standards do your cybersecurity solutions cover?",
+                  "answer": "We guarantee compliance alignment with ISO 27001, SOC 2 Type II, HIPAA, GDPR, PCI-DSS Level 1, and NIST SP 800-53 frameworks."
+                },
+                {
+                  "id": "faq-5",
+                  "number": "05",
+                  "question": "Do you provide post-incident recovery and digital forensics?",
+                  "answer": "Yes, our Tier-4 incident response team conducts root-cause forensic analysis, chain of custody evidence preservation, and complete infrastructure recovery."
+                }
+              ]
+            },
+            "blog": {
+              "eyebrow": "THREAT INTELLIGENCE & RESEARCH",
+              "title_regular": "Latest Cyber Threat",
+              "title_highlight": "Briefings",
+              "description": "Actionable intelligence reports and vulnerability analyses directly from the CYBERVANTA Threat Research Laboratory.",
+              "posts": [
+                {
+                  "id": "post-1",
+                  "title": "Zero-Day Vulnerability Matrix: Proactive APT Hunting in 2026",
+                  "category": "Threat Intel",
+                  "image": "/images/blog/blog-zeroday.webp",
+                  "image_alt": "Zero-day vulnerability threat intelligence",
+                  "date": "Oct 28, 2026",
+                  "read_time": "6 min read",
+                  "link_href": "#contact",
+                  "excerpt": "An in-depth analysis of newly identified kernel-level evasions and algorithmic methods for automated isolation."
+                },
+                {
+                  "id": "post-2",
+                  "title": "Post-Quantum Cryptography: Preparing Your Network for Q-Day",
+                  "category": "Cryptography",
+                  "image": "/images/blog/blog-quantum.webp",
+                  "image_alt": "Post-quantum cryptography research",
+                  "date": "Oct 24, 2026",
+                  "read_time": "8 min read",
+                  "link_href": "#contact",
+                  "excerpt": "Transitioning enterprise key exchange infrastructure to NIST-standardized lattice-based cryptographic algorithms."
+                },
+                {
+                  "id": "post-3",
+                  "title": "Autonomous Ransomware Containment: Lessons from 250+ Incidents",
+                  "category": "Incident Response",
+                  "image": "/images/blog/blog-ransomware.webp",
+                  "image_alt": "Autonomous ransomware containment analysis",
+                  "date": "Oct 20, 2026",
+                  "read_time": "5 min read",
+                  "link_href": "#contact",
+                  "excerpt": "Why human-only triage fails against automated ransomware payloads and how behavioral kill-switches stop lateral movement."
+                },
+                {
+                  "id": "post-4",
+                  "title": "Multi-Cloud Security Posture Management: Continuous Drift Prevention",
+                  "category": "Cloud Security",
+                  "image": "/images/blog/blog-cloudposture.webp",
+                  "image_alt": "Cloud security posture management guide",
+                  "date": "Oct 16, 2026",
+                  "read_time": "7 min read",
+                  "link_href": "#contact",
+                  "excerpt": "Best practices for federated IAM, real-time posture enforcement, and compliance orchestration across hybrid clouds."
+                }
+              ]
+            },
+            "contact": {
+              "eyebrow": "INITIATE ENGAGEMENT",
+              "title_regular": "Consult with a CYBERVANTA",
+              "title_highlight": "Defense Architect",
+              "description": "Schedule an executive cybersecurity assessment or discuss sovereign enterprise defense solutions with our certified engineers.",
+              "image": "/images/contact-map.webp",
+              "phone": "+1 (800) 555-CYBER",
+              "email": "security@cybervanta.com",
+              "address": "742 Evergreen Defense Way, Suite 400, New York, NY 10001",
+              "cards": [
+                {
+                  "id": "card-1",
+                  "title": "Headquarters",
+                  "description": "742 Evergreen Defense Way, Suite 400, New York, NY 10001",
+                  "action_text": "View Location",
+                  "action_link": "https://maps.google.com/?q=742+Evergreen+Defense+Way+Suite+400+New+York+NY+10001",
+                  "icon": "map"
+                },
+                {
+                  "id": "card-2",
+                  "title": "Emergency Hotline",
+                  "description": "+1 (800) 555-CYBER (24/7 Sovereign Incident Response)",
+                  "action_text": "Call Operations",
+                  "action_link": "tel:+180055529237",
+                  "icon": "phone"
+                },
+                {
+                  "id": "card-3",
+                  "title": "Encrypted Email",
+                  "description": "security@cybervanta.com (PGP Fingerprint Verified)",
+                  "action_text": "Send Email",
+                  "action_link": "mailto:security@cybervanta.com",
+                  "icon": "mail"
+                },
+                {
+                  "id": "card-4",
+                  "title": "SOC Command Center",
+                  "description": "Global Defense Operations Tiers 1-4 Realtime Monitoring",
+                  "action_text": "Request Briefing",
+                  "action_link": "#contact-form",
+                  "icon": "messagesquare"
+                }
+              ],
+              "form": {
+                "eyebrow": "REQUEST A QUOTE",
+                "title_regular": "Request A",
+                "title_highlight": "Quote",
+                "description": "Please fill out the form below with your requirements. Our defense team will review your specifications and send you a customized cybersecurity proposal.",
+                "fields": {
+                  "name": {
+                    "label": "Your Name *",
+                    "placeholder": "Your Name / Organization",
+                    "icon": "User"
+                  },
+                  "email": {
+                    "label": "Work Email *",
+                    "placeholder": "work.email@company.com",
+                    "icon": "Mail"
+                  },
+                  "phone": {
+                    "label": "Your Phone *",
+                    "placeholder": "+1 (800) 000-0000",
+                    "icon": "Phone"
+                  },
+                  "company": {
+                    "label": "Company Name",
+                    "placeholder": "Company Name / Entity",
+                    "icon": "Building2"
+                  },
+                  "service": {
+                    "label": "Service Interested In",
+                    "placeholder": "Select Defense Scope (SOC, Zero-Trust, Cloud Audit)",
+                    "icon": "LayoutGrid",
+                    "options": [
+                      "Managed Security Services (MSS)",
+                      "Cloud Security Posture Management",
+                      "24/7 SOC Monitoring & Threat Detection",
+                      "Penetration Testing & Red Teaming",
+                      "Incident Response & Forensics",
+                      "Compliance & Regulatory Audit (ISO/SOC2/NIST)",
+                      "Zero Trust Architecture Implementation",
+                      "Quantum-Safe Hybrid Cryptography"
+                    ]
+                  },
+                  "requirements": {
+                    "label": "Your Requirements *",
+                    "placeholder": "Describe your enterprise infrastructure scale or security challenges...",
+                    "icon": "MessageSquare"
+                  },
+                  "country": {
+                    "label": "Country",
+                    "placeholder": "Select Country",
+                    "icon": "MapPin",
+                    "options": [
+                      "United States",
+                      "United Kingdom",
+                      "Canada",
+                      "Germany",
+                      "India",
+                      "Australia",
+                      "United Arab Emirates",
+                      "Singapore",
+                      "Other"
+                    ]
+                  },
+                  "industry": {
+                    "label": "Industry Type",
+                    "placeholder": "Select Industry Type",
+                    "icon": "Building2",
+                    "options": [
+                      "Financial Services & Banking",
+                      "Healthcare & Life Sciences",
+                      "Technology & SaaS",
+                      "E-Commerce & Retail",
+                      "Manufacturing & Logistics",
+                      "Government & Public Sector",
+                      "Legal & Professional Services",
+                      "Energy & Critical Infrastructure",
+                      "Other"
+                    ]
+                  },
+                  "budget": {
+                    "label": "Budget Range",
+                    "placeholder": "Select Budget Range",
+                    "icon": "CircleDollarSign",
+                    "options": [
+                      "Under $10,000",
+                      "$10,000 - $25,000",
+                      "$25,000 - $50,000",
+                      "$50,000 - $100,000",
+                      "$100,000+"
+                    ]
+                  }
+                },
+                "button_text": "Get A Quote",
+                "security_note": "Your enterprise telemetry and specifications are cryptographically protected."
+              }
+            },
+            "get_a_quote": {
+              "eyebrow": "GET A QUOTE",
+              "title_regular": "Request A",
+              "title_highlight": "Quote",
+              "description": "Tell us about your requirements and our team will provide you with a customized sovereign security solution and pricing.",
+              "feature_image": "/images/about-cybervanta.webp",
+              "feature_image_alt": "CYBERVANTA Security Shield Core",
+              "features": [
+                {
+                  "id": "feat-1",
+                  "title": "Tailored Defense Framework",
+                  "description": "Customized sovereign architecture engineered for your infrastructure scale.",
+                  "icon": "Settings"
+                },
+                {
+                  "id": "feat-2",
+                  "title": "Sub-Second Response",
+                  "description": "Immediate consultation with tier-4 defense engineers within 2 hours.",
+                  "icon": "Zap"
+                },
+                {
+                  "id": "feat-3",
+                  "title": "Dedicated Architect",
+                  "description": "Direct guidance from certified Zero-Trust & SOC architects.",
+                  "icon": "Users"
+                },
+                {
+                  "id": "feat-4",
+                  "title": "Transparent SLAs",
+                  "description": "Predictable, clear enterprise subscription and retainer pricing.",
+                  "icon": "FileText"
+                }
+              ],
+              "form": {
+                "title_regular": "Request a",
+                "title_highlight": "Quote",
+                "description": "Please fill out the form below with your requirements. Our defense team will review your information and send you a customized quote.",
+                "fields": {
+                  "name": {
+                    "label": "Your Name *",
+                    "placeholder": "Your Name / Organization",
+                    "icon": "User"
+                  },
+                  "email": {
+                    "label": "Your Email *",
+                    "placeholder": "work.email@company.com",
+                    "icon": "Mail"
+                  },
+                  "phone": {
+                    "label": "Your Phone *",
+                    "placeholder": "+1 (800) 000-0000",
+                    "icon": "Phone"
+                  },
+                  "company": {
+                    "label": "Company Name",
+                    "placeholder": "Company Name / Entity",
+                    "icon": "Building2"
+                  },
+                  "service": {
+                    "label": "Service Interested In",
+                    "placeholder": "Select Defense Scope (SOC, Zero-Trust, Cloud Audit)",
+                    "icon": "LayoutGrid",
+                    "options": [
+                      "Managed Security Services (MSS)",
+                      "Cloud Security Posture Management",
+                      "24/7 SOC Monitoring & Threat Detection",
+                      "Penetration Testing & Red Teaming",
+                      "Incident Response & Forensics",
+                      "Compliance & Regulatory Audit (ISO/SOC2/NIST)",
+                      "Zero Trust Architecture Implementation",
+                      "Quantum-Safe Hybrid Cryptography"
+                    ]
+                  },
+                  "requirements": {
+                    "label": "Your Requirements *",
+                    "placeholder": "Describe your enterprise infrastructure scale or security challenges...",
+                    "icon": "MessageSquare"
+                  },
+                  "country": {
+                    "label": "Country",
+                    "placeholder": "Select Country",
+                    "icon": "MapPin",
+                    "options": [
+                      "United States",
+                      "United Kingdom",
+                      "Canada",
+                      "Germany",
+                      "India",
+                      "Australia",
+                      "United Arab Emirates",
+                      "Singapore",
+                      "Other"
+                    ]
+                  },
+                  "industry": {
+                    "label": "Industry Type",
+                    "placeholder": "Select Industry Type",
+                    "icon": "Building2",
+                    "options": [
+                      "Financial Services & Banking",
+                      "Healthcare & Life Sciences",
+                      "Technology & SaaS",
+                      "E-Commerce & Retail",
+                      "Manufacturing & Logistics",
+                      "Government & Public Sector",
+                      "Legal & Professional Services",
+                      "Energy & Critical Infrastructure",
+                      "Other"
+                    ]
+                  },
+                  "budget": {
+                    "label": "Budget Range",
+                    "placeholder": "Select Budget Range",
+                    "icon": "CircleDollarSign",
+                    "options": [
+                      "Under $10,000",
+                      "$10,000 - $25,000",
+                      "$25,000 - $50,000",
+                      "$50,000 - $100,000",
+                      "$100,000+"
+                    ]
+                  }
+                },
+                "button_text": "Get A Quote",
+                "security_note": "Your information is secure with us."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

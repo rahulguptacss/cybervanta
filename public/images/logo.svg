@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 60" fill="none">
+  <!-- Cyber Shield Icon -->
+  <g transform="translate(10, 7)">
+    <!-- Outer Shield Glow -->
+    <path d="M22 2L4 9.5V23C4 35 12 45.5 22 48.5C32 45.5 40 35 40 23V9.5L22 2Z" fill="url(#shield-grad)" stroke="#00f0ff" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Cyber Circuit Hex Lines -->
+    <path d="M22 9V22M13 17L22 22L31 17M15 30L22 35L29 30" stroke="#00ffb2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Central Quantum Core -->
+    <circle cx="22" cy="22" r="3.5" fill="#00f0ff" filter="url(#glow)"/>
+    <circle cx="22" cy="22" r="1.5" fill="#ffffff"/>
+  </g>
+  <!-- Text: CYBERVANTA -->
+  <text x="64" y="32" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="0.5">CYBER<tspan fill="#00f0ff">VANTA</tspan></text>
+  <!-- Tagline: CYBERSECURITY & TECHNOLOGIES -->
+  <text x="65" y="46" font-family="'Inter', -apple-system, sans-serif" font-size="7.5" font-weight="700" fill="#00ffb2" letter-spacing="1.8">CYBERSECURITY &amp; TECHNOLOGIES</text>
+
+  <defs>
+    <linearGradient id="shield-grad" x1="4" y1="2" x2="40" y2="48.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1f38" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#020b16" stop-opacity="0.98"/>
+    </linearGradient>
+    <filter id="glow" x="14" y="14" width="16" height="16" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

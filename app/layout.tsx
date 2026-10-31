@@ -1,0 +1,45 @@
+import type { Metadata } from 'next';
+import { Outfit, Inter } from 'next/font/google';
+import './globals.css';
+import { pages, common } from '../components/types';
+import ScrollToTop from '../components/ui/ScrollToTop';
+
+const outfit = Outfit({
+  variable: '--font-outfit',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+});
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: pages.home.metadata.title,
+  description: pages.home.metadata.description,
+  icons: {
+    icon: common.Header.logo,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang="en"
+      className={`${outfit.variable} ${inter.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col font-sans bg-[#040812] text-slate-100 selection:bg-[#00f0ff] selection:text-black">
+        <ScrollToTop />
+        {children}
+      </body>
+    </html>
+  );
+}
