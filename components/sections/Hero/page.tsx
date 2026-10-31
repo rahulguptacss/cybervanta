@@ -94,8 +94,8 @@ export default function Hero({ data }: HeroProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
           
-          {/* Left Column: Eyebrow, Main Headline, Description, 4 Features, CTA Button */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
+          {/* Left Column: Eyebrow, Main Headline, Description, 4 Features, CTA Button (order-2 on mobile, order-1 on desktop) */}
+          <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
             
             {/* Top Eyebrow: PROTECT • DETECT • PREVENT */}
             <div className="mb-2.5 sm:mb-3">
@@ -161,8 +161,8 @@ export default function Hero({ data }: HeroProps) {
 
           </div>
 
-          {/* Right Column: 3D Holographic Cyber Defense Video Showcase */}
-          <div className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center">
+          {/* Right Column: 3D Holographic Cyber Defense Video Showcase (order-1 on mobile, order-2 on desktop) */}
+          <div className="order-1 lg:order-2 lg:col-span-6 xl:col-span-6 relative flex items-center justify-center">
             <div className="relative w-full max-w-[560px] xl:max-w-[600px] flex items-center justify-center group transform-gpu transition-transform duration-300 hover:scale-[1.015]">
               {data.video ? (
                 <div className="relative w-full h-[300px] sm:h-[360px] md:h-[390px] lg:h-[410px] xl:h-[440px] rounded-3xl overflow-hidden border-2 border-[#0099ff]/40 bg-[#020712] shadow-[0_0_45px_rgba(0,102,255,0.35)]">

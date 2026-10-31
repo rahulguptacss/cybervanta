@@ -49,7 +49,7 @@ export default function Portfolio({ data }: PortfolioProps) {
           <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.2] mb-4">
             <span>{data.title_regular || 'Mission-Critical'} </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] via-[#0099ff] to-[#0052ff] drop-shadow-[0_0_20px_rgba(0,140,255,0.45)]">
-              {data.title_highlight || 'Case Studies'}
+              {data.title_highlight || 'Portfolio'}
             </span>
           </h2>
 

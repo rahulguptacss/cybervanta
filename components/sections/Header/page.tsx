@@ -57,16 +57,44 @@ export default function Header({ data }: HeaderProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile drawer on Escape key
+  const touchStartY = useRef<number | null>(null);
+
+  // Close mobile drawer on Escape key and window resize
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMobileMenuOpen(false);
       }
     };
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+      }
+    };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  const handleHeaderTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleHeaderTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartY.current !== null) {
+      const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+      // Drag down from mobile header bar by > 40px opens the menu
+      if (deltaY > 40 && !mobileMenuOpen) {
+        setMobileMenuOpen(true);
+      } else if (deltaY < -40 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+      touchStartY.current = null;
+    }
+  };
 
   const isActive = (href: string) => {
     if (href.startsWith('#')) {
@@ -93,6 +121,8 @@ export default function Header({ data }: HeaderProps) {
 
   return (
     <header
+      onTouchStart={handleHeaderTouchStart}
+      onTouchEnd={handleHeaderTouchEnd}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#030712]/95 backdrop-blur-md border-b border-cyan-500/20 py-1.5 sm:py-2 shadow-[0_10px_30px_rgba(0,0,0,0.85)]'
@@ -212,87 +242,110 @@ export default function Header({ data }: HeaderProps) {
           </div>
 
         </div>
+
+        {/* Subtle Mobile Drag Indicator on bottom of Header */}
+        <div className="flex lg:hidden justify-center pb-1 -mt-1 pointer-events-none">
+          <span className="h-1 w-8 rounded-full bg-cyan-400/25" />
+        </div>
       </div>
 
-      {/* Mobile Menu Drawer with Touch Drag Support (mobile header se drag hoga) */}
+      {/* Mobile Navigation Drawer with Touch Drag Support (mobile header se drag hoga) */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            key="mobile-nav-drawer"
-            drag="y"
-            dragConstraints={{ top: 0, bottom: 0 }}
-            dragElastic={{ top: 0.15, bottom: 0.5 }}
-            onDragEnd={(_, info) => {
-              if (info.offset.y < -50 || info.velocity.y < -250) {
-                setMobileMenuOpen(false);
-              }
-            }}
-            initial={{ opacity: 0, height: 0, y: -6 }}
-            animate={{ opacity: 1, height: 'auto', y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -6 }}
-            transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden overflow-hidden bg-[#040914]/98 backdrop-blur-2xl border-b border-cyan-500/25 shadow-[0_25px_50px_rgba(0,0,0,0.95)] max-h-[calc(100vh-4.5rem)] overflow-y-auto touch-pan-y"
-          >
-            {/* Tactile Mobile Drag Pill Handle */}
-            <div className="flex flex-col items-center justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing select-none">
-              <span className="h-1.5 w-14 rounded-full bg-cyan-400/50 shadow-[0_0_10px_rgba(0,240,255,0.5)] transition-all hover:bg-cyan-400" />
-              <span className="text-[10px] text-cyan-400/70 font-mono tracking-widest mt-1">SWIPE / DRAG UP TO CLOSE</span>
-            </div>
+          <>
+            {/* Backdrop with blur */}
+            <motion.div
+              key="mobile-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.22 }}
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+              className="lg:hidden fixed inset-0 top-[58px] sm:top-[64px] bg-[#020712]/80 backdrop-blur-[6px] z-40"
+            />
 
-            <div className="px-5 py-4 space-y-3">
-              <nav className="flex flex-col space-y-1">
-                {data.links.map((link: NavItem, idx: number) => {
-                  const active = isActive(link.href);
-
-                  return (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.02 * idx, duration: 0.2 }}
-                    >
-                      <Link
-                        href={link.href}
-                        onClick={(e) => handleLinkClick(e, link.href)}
-                        className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[15px] font-medium transition-colors ${
-                          active
-                            ? 'bg-cyan-500/15 text-[#00e5ff] font-semibold border-l-2 border-[#00e5ff]'
-                            : 'text-slate-200 hover:text-[#00e5ff] hover:bg-white/[0.04]'
-                        }`}
-                      >
-                        <span>{link.name}</span>
-                        {active && (
-                          <span className="w-2 h-2 rounded-full bg-[#00e5ff] shadow-[0_0_8px_#00e5ff]" />
-                        )}
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </nav>
-
-              {/* Mobile CTA */}
-              {data.button_text && (
-                <div className="pt-2">
-                  <Link
-                    href={data.button_link || '#contact'}
-                    onClick={(e) => handleLinkClick(e, data.button_link || '#contact')}
-                    className="flex items-center justify-center gap-2 w-full rounded-full bg-gradient-to-r from-[#00e5ff] via-[#0099ff] to-[#0052ff] px-6 py-3 text-[14px] font-extrabold text-[#020712] shadow-[0_0_20px_rgba(0,180,255,0.45)] transition-all active:scale-[0.98]"
-                  >
-                    <span>{data.button_text}</span>
-                    <ArrowRight className="h-4 w-4 text-[#020712]" />
-                  </Link>
-                </div>
-              )}
-
-              {/* Drag Dismiss Bottom Footer */}
-              <div
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center pt-2 pb-1 cursor-pointer text-[11px] text-cyan-400/50 hover:text-cyan-300 border-t border-cyan-950/60"
-              >
-                <span>▲ Drag up or tap here to close</span>
+            {/* Draggable panel from top */}
+            <motion.div
+              key="mobile-drawer"
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={{ top: 0.35, bottom: 0.65 }}
+              onDragEnd={(_, info) => {
+                // Drag down or up to dismiss
+                if (info.offset.y > 60 || info.velocity.y > 250 || info.offset.y < -50 || info.velocity.y < -250) {
+                  setMobileMenuOpen(false);
+                }
+              }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.28, ease: 'easeOut' }}
+              className="lg:hidden absolute left-0 right-0 top-full z-50 overflow-hidden bg-[#040914]/98 backdrop-blur-2xl border-b border-cyan-500/25 shadow-[0_25px_50px_rgba(0,0,0,0.95)] rounded-b-2xl cursor-grab active:cursor-grabbing select-none"
+            >
+              {/* Tactile Mobile Drag Pill Handle */}
+              <div className="flex flex-col items-center justify-center pt-3 pb-1.5 select-none cursor-grab active:cursor-grabbing">
+                <span className="h-1.5 w-14 rounded-full bg-cyan-400/60 shadow-[0_0_10px_rgba(0,229,255,0.5)] transition-all hover:bg-cyan-400" />
+                <span className="text-[10px] text-cyan-400/80 font-mono tracking-widest mt-1 font-semibold uppercase">
+                  {data.drag_hint || 'Drag down to close'}
+                </span>
               </div>
-            </div>
-          </motion.div>
+
+              <div className="px-5 py-4 space-y-3 max-h-[calc(100vh-140px)] overflow-y-auto">
+                <nav className="flex flex-col space-y-1">
+                  {data.links.map((link: NavItem, idx: number) => {
+                    const active = isActive(link.href);
+
+                    return (
+                      <motion.div
+                        key={link.name}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.02 * idx, duration: 0.2 }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={(e) => handleLinkClick(e, link.href)}
+                          className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[15px] font-medium transition-colors ${
+                            active
+                              ? 'bg-cyan-500/15 text-[#00e5ff] font-semibold border-l-2 border-[#00e5ff]'
+                              : 'text-slate-200 hover:text-[#00e5ff] hover:bg-white/[0.04]'
+                          }`}
+                        >
+                          <span>{link.name}</span>
+                          {active && (
+                            <span className="w-2 h-2 rounded-full bg-[#00e5ff] shadow-[0_0_8px_#00e5ff]" />
+                          )}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </nav>
+
+                {/* Mobile CTA */}
+                {data.button_text && (
+                  <div className="pt-2">
+                    <Link
+                      href={data.button_link || '#contact'}
+                      onClick={(e) => handleLinkClick(e, data.button_link || '#contact')}
+                      className="flex items-center justify-center gap-2 w-full rounded-full bg-gradient-to-r from-[#00e5ff] via-[#0099ff] to-[#0052ff] px-6 py-3 text-[14px] font-extrabold text-[#020712] shadow-[0_0_20px_rgba(0,180,255,0.45)] transition-all active:scale-[0.98]"
+                    >
+                      <span>{data.button_text}</span>
+                      <ArrowRight className="h-4 w-4 text-[#020712]" />
+                    </Link>
+                  </div>
+                )}
+
+                {/* Drag Dismiss Bottom Footer */}
+                <div
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center pt-2 pb-1 cursor-pointer text-[11px] text-cyan-400/50 hover:text-cyan-300 border-t border-cyan-950/60"
+                >
+                  <span>▲ Drag or tap here to close</span>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

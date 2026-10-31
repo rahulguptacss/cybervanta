@@ -12,6 +12,7 @@ export interface HeaderData {
   logo: string;
   logo_text: string;
   logo_subtext: string;
+  drag_hint?: string;
   links: LinkType[];
   button_text?: string;
   button_link?: string;
@@ -124,35 +125,6 @@ export interface ServicesSectionData {
   items: ServiceItem[];
 }
 
-export interface ServiceBenefitItem {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface ServiceDetailItem {
-  slug: string;
-  name: string;
-  sidebar_icon: string;
-  eyebrow: string;
-  title_regular: string;
-  title_highlight: string;
-  subtitle: string;
-  image: string;
-  image_alt: string;
-  paragraphs: string[];
-  benefits_eyebrow: string;
-  benefits_title_regular: string;
-  benefits_title_highlight: string;
-  benefits_description: string;
-  benefits: ServiceBenefitItem[];
-}
-
-export interface ServiceDetailSectionData {
-  sidebar_title: string;
-  services: ServiceDetailItem[];
-}
-
 export interface ProcessStep {
   number: string;
   icon: string;
@@ -167,96 +139,6 @@ export interface ProcessSectionData {
   description: string;
   steps: ProcessStep[];
   variant?: 'timeline' | 'cards' | string;
-}
-
-export interface MissionVisionItem {
-  eyebrow: string;
-  title_regular: string;
-  title_highlight: string;
-  description: string;
-  image: string;
-  image_alt: string;
-}
-
-export interface MissionVisionSectionData {
-  mission: MissionVisionItem;
-  vision: MissionVisionItem;
-}
-
-export interface BlogPostItem {
-  id: string;
-  slug?: string;
-  image: string;
-  image_alt: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  author?: string;
-  date: string;
-  read_time?: string;
-  link_href?: string;
-}
-
-export interface BlogQuoteData {
-  quote: string;
-  author?: string;
-  image?: string;
-}
-
-export interface BlogDetailAuthor {
-  name: string;
-  avatar?: string;
-  role?: string;
-}
-
-export interface BlogDetailPost {
-  id: string;
-  slug: string;
-  category: string;
-  title_regular: string;
-  title_highlight: string;
-  title_suffix?: string;
-  author: BlogDetailAuthor;
-  published_date: string;
-  intro_paragraph: string;
-  hero_image: string;
-  hero_image_alt: string;
-  body_paragraphs: string[];
-  quote: BlogQuoteData;
-  subheading_regular: string;
-  subheading_highlight: string;
-  subheading_paragraph: string;
-  checklist_title_regular: string;
-  checklist_title_highlight: string;
-  checklist_items: string[];
-  secondary_image: string;
-  secondary_image_alt: string;
-}
-
-export interface BlogDetailSectionData {
-  posts: BlogDetailPost[];
-}
-
-export interface BlogSectionData {
-  eyebrow: string;
-  title_regular: string;
-  title_highlight: string;
-  description: string;
-  button_text: string;
-  button_link: string;
-  posts: BlogPostItem[];
-}
-
-export interface CtaBannerData {
-  title_regular: string;
-  title_highlight: string;
-  description: string;
-  email: string;
-  phone: string;
-  follow_us_text: string;
-  socials: FooterSocialItem[];
-  button_text: string;
-  button_link: string;
 }
 
 export interface WhyChooseUsFeature {
@@ -283,17 +165,6 @@ export interface WhyChooseUsSectionData {
   cta_text: string;
   cta_link: string;
   social_proof?: WhyChooseUsClientProof;
-}
-
-export interface BreadcrumbItem {
-  name: string;
-  href: string;
-}
-
-export interface BreadcrumbSectionData {
-  background_image: string;
-  background_alt: string;
-  items: BreadcrumbItem[];
 }
 
 export interface ContactCardItem {
@@ -337,6 +208,8 @@ export interface ContactFormData {
   };
   button_text: string;
   security_note?: string;
+  success_title?: string;
+  success_message?: string;
 }
 
 export interface ContactSectionData {
@@ -347,6 +220,10 @@ export interface ContactSectionData {
   email?: string;
   phone?: string;
   address?: string;
+  channels_eyebrow?: string;
+  channels_title_regular?: string;
+  channels_title_highlight?: string;
+  channels_description?: string;
   cards?: ContactCardItem[];
   form?: ContactFormData;
   map?: {
@@ -356,20 +233,6 @@ export interface ContactSectionData {
     office_address_line1?: string;
     office_address_line2?: string;
   };
-}
-
-export interface FaqItem {
-  id?: string;
-  number?: string;
-  question: string;
-  answer: string;
-}
-
-export interface FaqSectionData {
-  eyebrow?: string;
-  title_regular?: string;
-  title_highlight?: string;
-  items: FaqItem[];
 }
 
 export interface PortfolioItem {
@@ -409,72 +272,8 @@ export interface PageMeta {
   components: PageComponent[];
 }
 
-export interface NotFoundData {
-  code: string;
-  badge: string;
-  title: string;
-  description: string;
-  back_home: {
-    text: string;
-    href: string;
-  };
-}
-
-export interface QuoteFeatureItem {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export interface QuoteFormField {
-  label: string;
-  placeholder: string;
-  icon: string;
-  options?: string[];
-}
-
-export interface GetAQuoteSectionData {
-  eyebrow: string;
-  title_regular: string;
-  title_highlight: string;
-  description: string;
-  feature_image: string;
-  feature_image_alt: string;
-  features: QuoteFeatureItem[];
-  form: {
-    title_regular: string;
-    title_highlight: string;
-    description: string;
-    fields: {
-      name: QuoteFormField;
-      email: QuoteFormField;
-      phone: QuoteFormField;
-      company: QuoteFormField;
-      service: QuoteFormField;
-      requirements: QuoteFormField;
-      country: QuoteFormField;
-      industry: QuoteFormField;
-      budget: QuoteFormField;
-    };
-    button_text: string;
-    security_note: string;
-  };
-}
-
 export interface SitePages {
   home: PageMeta;
-  not_found?: NotFoundData;
-  about?: PageMeta;
-  services?: PageMeta;
-  portfolio?: PageMeta;
-  blog?: PageMeta;
-  faq?: PageMeta;
-  contact?: PageMeta;
-  service_detail?: PageMeta;
-  portfolio_detail?: PageMeta;
-  blog_detail?: PageMeta;
-  get_a_quote?: PageMeta;
 }
 
 export interface SiteSections {
@@ -485,17 +284,7 @@ export interface SiteSections {
   why_choose_us?: WhyChooseUsSectionData;
   process: ProcessSectionData;
   portfolio: PortfolioSectionData;
-  faq?: FaqSectionData;
-  blog: BlogSectionData;
   contact: ContactSectionData;
-  breadcrumb?: BreadcrumbSectionData;
-  service_detail?: ServiceDetailSectionData;
-  portfolio_detail?: ServiceDetailSectionData;
-  blog_detail?: BlogDetailSectionData;
-  about_process?: ProcessSectionData;
-  mission_vision?: MissionVisionSectionData;
-  cta_banner?: CtaBannerData;
-  get_a_quote?: GetAQuoteSectionData;
 }
 
 export interface TemplateComponents {

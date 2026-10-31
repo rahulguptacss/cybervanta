@@ -1,17 +1,15 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Header from '../components/sections/Header';
-import Hero from '../components/sections/Hero';
-import About from '../components/sections/About';
-import SocBanner from '../components/sections/SocBanner';
-import Services from '../components/sections/Services';
-import WhyChooseUs from '../components/sections/WhyChooseUs';
-import Process from '../components/sections/Process';
-import Portfolio from '../components/sections/Portfolio';
-import Blog from '../components/sections/Blog';
-import Contact from '../components/sections/Contact';
-import GetAQuote from '../components/sections/GetAQuote';
-import Footer from '../components/sections/Footer';
+import Header from '../components/sections/Header/page';
+import Hero from '../components/sections/Hero/page';
+import About from '../components/sections/About/page';
+import SocBanner from '../components/sections/SocBanner/page';
+import Services from '../components/sections/Services/page';
+import WhyChooseUs from '../components/sections/WhyChooseUs/page';
+import Process from '../components/sections/Process/page';
+import Portfolio from '../components/sections/Portfolio/page';
+import Contact from '../components/sections/Contact/page';
+import Footer from '../components/sections/Footer/page';
 import BackToTop from '../components/ui/BackToTop';
 import { common, pages, sections, type PageComponent } from '../components/types';
 
@@ -31,9 +29,7 @@ export default function Home() {
     SocBanner: <SocBanner data={sections.soc_banner} />,
     Process: <Process data={sections.process} />,
     Portfolio: <Portfolio data={sections.portfolio} />,
-    Blog: <Blog data={sections.blog} limit={4} showButton={false} />,
     Contact: <Contact data={sections.contact} />,
-    GetAQuote: sections.get_a_quote ? <GetAQuote data={sections.get_a_quote} /> : null,
   };
 
   return (

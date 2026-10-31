@@ -107,20 +107,20 @@ export default function Footer({ data }: FooterProps) {
               <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-5 sm:mb-6">
                 {/* Email Pill */}
                 <a
-                  href={`mailto:${data.email || 'support@xyz.com'}`}
+                  href={`mailto:${data.email || 'info@xyz.com'}`}
                   className="inline-flex items-center gap-2.5 rounded-2xl border border-[#0099ff]/50 bg-[#040e24]/80 px-4 py-2.5 shadow-[0_0_15px_rgba(0,102,255,0.2)] transition-all duration-300 hover:border-[#00e5ff] hover:shadow-[0_0_22px_rgba(0,140,255,0.4)] group/pill"
                 >
                   <Mail className="h-4.5 w-4.5 text-[#00e5ff] transition-transform duration-300 group-hover/pill:scale-110" />
-                  <span className="text-sm font-medium text-white">{data.email || 'support@xyz.com'}</span>
+                  <span className="text-sm font-medium text-white">{data.email || 'info@xyz.com'}</span>
                 </a>
 
                 {/* Phone Pill */}
                 <a
-                  href={`tel:${data.phone || '(+1) 0000000000'}`}
+                  href={`tel:${data.phone || '+100000000000'}`}
                   className="inline-flex items-center gap-2.5 rounded-2xl border border-[#0099ff]/50 bg-[#040e24]/80 px-4 py-2.5 shadow-[0_0_15px_rgba(0,102,255,0.2)] transition-all duration-300 hover:border-[#00e5ff] hover:shadow-[0_0_22px_rgba(0,140,255,0.4)] group/pill"
                 >
                   <Phone className="h-4.5 w-4.5 text-[#00e5ff] transition-transform duration-300 group-hover/pill:scale-110" />
-                  <span className="text-sm font-medium text-white">{data.phone || '(+1) 0000000000'}</span>
+                  <span className="text-sm font-medium text-white">{data.phone || '+100000000000'}</span>
                 </a>
 
                 {/* Horizontal Connecting Stem Line with Glowing Cyan Dot */}
@@ -266,25 +266,25 @@ export default function Footer({ data }: FooterProps) {
           <div className="grid grid-cols-2 gap-2 sm:gap-3 w-full mb-4">
             {/* Email Capsule */}
             <a
-              href={`mailto:${data.email || 'support@xyz.com'}`}
+              href={`mailto:${data.email || 'info@xyz.com'}`}
               className="flex items-center gap-2 sm:gap-2.5 w-full rounded-xl border border-[#0099ff]/50 bg-[#040e24]/80 px-2.5 sm:px-3.5 py-2 shadow-[0_0_12px_rgba(0,102,255,0.18)] transition-colors hover:border-[#00e5ff] min-w-0"
             >
               <Mail className="h-4 w-4 text-[#00e5ff] shrink-0" />
               <div className="h-4 w-[1px] bg-slate-700/80 shrink-0" />
               <span className="text-[11.5px] sm:text-[13px] text-white font-normal truncate">
-                {data.email || 'support@xyz.com'}
+                {data.email || 'info@xyz.com'}
               </span>
             </a>
 
             {/* Phone Capsule */}
             <a
-              href={`tel:${data.phone || '(+1) 0000000000'}`}
+              href={`tel:${data.phone || '+100000000000'}`}
               className="flex items-center gap-2 sm:gap-2.5 w-full rounded-xl border border-[#0099ff]/50 bg-[#040e24]/80 px-2.5 sm:px-3.5 py-2 shadow-[0_0_12px_rgba(0,102,255,0.18)] transition-colors hover:border-[#00e5ff] min-w-0"
             >
               <Phone className="h-4 w-4 text-[#00e5ff] shrink-0" />
               <div className="h-4 w-[1px] bg-slate-700/80 shrink-0" />
               <span className="text-[11.5px] sm:text-[13px] text-white font-normal truncate">
-                {data.phone || '(+1) 0000000000'}
+                {data.phone || '+100000000000'}
               </span>
             </a>
           </div>

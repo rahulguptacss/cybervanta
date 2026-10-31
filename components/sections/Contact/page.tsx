@@ -148,7 +148,26 @@ export default function Contact({ data }: ContactProps) {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      const digitsOnly = value.replace(/\D/g, '');
+      setFormData((prev) => ({ ...prev, phone: digitsOnly }));
+      return;
+    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (
+      ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End', 'Enter'].includes(e.key) ||
+      e.ctrlKey ||
+      e.metaKey
+    ) {
+      return;
+    }
+    if (!/^[0-9]$/.test(e.key)) {
+      e.preventDefault();
+    }
   };
 
   const handleDropdownChange = (name: string, value: string) => {
@@ -368,10 +387,11 @@ export default function Contact({ data }: ContactProps) {
                   <div className="rounded-2xl border border-cyan-400 bg-cyan-950/30 p-8 text-center my-6">
                     <CheckCircle2 className="h-12 w-12 text-[#00f0ff] mx-auto mb-3" />
                     <h4 className="text-xl font-bold text-white mb-2">
-                      Quote Request Received!
+                      {data.form?.success_title || 'Quote Request Received!'}
                     </h4>
                     <p className="text-slate-300 text-sm">
-                      Our cybersecurity specialists will review your requirements and reach out within 2 hours.
+                      {data.form?.success_message ||
+                        'Our cybersecurity specialists will review your requirements and reach out within 2 hours.'}
                     </p>
                   </div>
                 ) : (
@@ -414,10 +434,13 @@ export default function Contact({ data }: ContactProps) {
                         <Phone className="h-4.5 w-4.5 text-[#00f0ff] shrink-0 mr-3" />
                         <input
                           type="tel"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           name="phone"
                           required
                           value={formData.phone}
                           onChange={handleChange}
+                          onKeyDown={handlePhoneKeyDown}
                           placeholder={getPhonePlaceholder()}
                           className="w-full bg-transparent text-white placeholder-[#94a3b8] text-sm focus:outline-none"
                         />
@@ -531,15 +554,18 @@ export default function Contact({ data }: ContactProps) {
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-[1.5px] bg-gradient-to-r from-[#0052ff] to-[#00e5ff]" />
                   <span className="text-xs font-bold tracking-widest text-[#00e5ff] uppercase">
-                    DIRECT DEFENSE CHANNELS
+                    {data.channels_eyebrow || 'DIRECT DEFENSE CHANNELS'}
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
-                  <span>Priority </span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-[#0070f3]">Operations</span>
+                  <span>{data.channels_title_regular || 'Priority'} </span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-[#0070f3]">
+                    {data.channels_title_highlight || 'Operations'}
+                  </span>
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#cbd5e1] font-light leading-relaxed mb-6">
-                  Direct encrypted channels to our SOC commanders and security architecture teams.
+                  {data.channels_description ||
+                    'Direct encrypted channels to our SOC commanders and security architecture teams.'}
                 </p>
 
                 {/* 4 Stacked Contact Cards */}
