@@ -43,12 +43,9 @@ export default function About({ data }: AboutProps) {
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* Cyber Scan Line sweeping across the card */}
-              <div className="animate-scanline" aria-hidden="true" />
-
               {/* Subtle Ambient Radial Glow on image center */}
               <div
-                className="pointer-events-none absolute top-[35%] right-[25%] h-36 w-36 rounded-full bg-cyan-400/20 blur-xl animate-shield-glow z-10"
+                className="pointer-events-none absolute top-[35%] right-[25%] h-36 w-36 rounded-full bg-cyan-400/20 blur-xl animate-pulse z-10"
                 aria-hidden="true"
               />
 

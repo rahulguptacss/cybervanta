@@ -199,7 +199,7 @@ export default function Services({ data, limit }: ServicesProps) {
 
               {/* Smooth 60fps GPU-Accelerated Floating Wave */}
               <div 
-                className="relative w-full h-full animate-float"
+                className="relative w-full h-full"
                 style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               >
                 <Image
